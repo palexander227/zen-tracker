@@ -47,7 +47,20 @@ const q1 = {name: 'action',
                     value: 7,
                     short: 'update role',                    
                 },
+
+                {
+                    name: 'Terminate',
+                    value: 8,
+                    short: 'exit',                    
+                },
             ]
 }
 
+const q2 ={
+    name: 'nameOfDepartment',
+    message: 'What is the name of the new department?',
+    type: 'input'
+}
+
 module.exports.q1 = q1;
+module.exports.q2 = q2;
