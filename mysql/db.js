@@ -1,4 +1,4 @@
-import mysql from 'mysql2';
+const mysql =  require('mysql2');
 
 const con = mysql.createConnection({
     host: 'localhost',
@@ -7,4 +7,4 @@ const con = mysql.createConnection({
     database: 'zen_db'
 });
 
-export {con};
+module.exports = con;
