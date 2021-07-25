@@ -1,5 +1,5 @@
 // to hold functions for communicating with zen_db
-const con = require('/db.js');
+const con = require('./db.js');
 
 const listEmployees = () => {
 con.query(
@@ -12,11 +12,18 @@ con.query(
 };
 
 const listDepartments = () => {
-    con.query(
-        'SELECT * FROM departments', 
+    let res;
+     con.query(
+        'SELECT * FROM department', 
         function(err, results){
-            if(err){console.log(err)
-            }else{return results};
+            // if(err){console.log(err)
+            // }else{return results};
+            res = results;
         }
-    );
+    );setTimeout(() => {console.log(res);
+        
+    }, 1000);
+    
 };
+
+module.exports.listDepartments = listDepartments;

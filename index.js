@@ -1,6 +1,7 @@
 // to hold the inquirer scripts and prompts for inquirer
 const inquirer = require('inquirer');
 const questions = require('./questions.js');
+const query = require('./mysql/query.js');
 
 inquirer.prompt(questions.q1)
     .then((ans) => {
@@ -27,7 +28,7 @@ const printTable = val => {
 };
 
 const viewDepartments = () => {
-      query.listDepartments()
-      .then(res => console.log(res));   
-
+      
+    let res = query.listDepartments();  
+    // console.log(res);
 }
