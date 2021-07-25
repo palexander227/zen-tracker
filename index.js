@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const questions = require('./questions.js');
 const query = require('./mysql/query.js');
+require('console.table');
 
 inquirer.prompt(questions.q1)
     .then((ans) => {
@@ -20,15 +21,16 @@ inquirer.prompt(questions.q1)
     });
 
 // helping functions for prompt responses
-
-const printTable = val => {
-    let res = table.getTable([val]);
-    console.log(res);
-    // console.table(JSON.stringify(val));
-};
-
-const viewDepartments = () => {
-      
-    query.listDepartments.then(res => console.log(res));  
-    // console.log(res);
+const viewDepartments = () => {      
+    query.listDepartments().then(res => console.table(res));
 }
+
+const viewRoles = () => {      
+    query.listRoles().then(res => console.table(res));
+}
+
+const viewEmployees = () => {      
+    query.listEmployees().then(res => console.table(res));
+}
+
+
