@@ -29,6 +29,6 @@ const printTable = val => {
 
 const viewDepartments = () => {
       
-    let res = query.listDepartments();  
+    query.listDepartments.then(res => console.log(res));  
     // console.log(res);
 }
