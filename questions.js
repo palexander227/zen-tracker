@@ -162,6 +162,5 @@ const q6 = [
 
 
 
-module.exports.q1 = q1;
-module.exports.q2 = q2;
-module.exports.q3 = q3;
+
+module.exports = {q1, q2, q3, q4, q5, q6}

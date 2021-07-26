@@ -63,6 +63,38 @@ const addDept = (val) => {
     })
 }
 
+const addRole = (t, s, d) => {
+    return new Promise((resolve, reject) => {
+        con.query(
+            'INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)', [t, s, d],
+            (err, results) => {
+                if(err){
+                    reject(err)
+                }
+                resolve(`Added new role ${t}`)
+            }
+        )
+        ;
+    })
+}
+
+const addEmployee = (f, l, r, m) => {
+    return new Promise((resolve, reject) => {
+        con.query(
+            'INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)', [f, l, r, m],
+            (err, results) => {
+                if(err){
+                    reject(err)
+                }
+                resolve(`Added new employee ${f} ${l}`)
+            }
+        )
+        ;
+    })
+}
+
+
+
 
 
 const updateRole = (empName, empRole) => {
@@ -97,3 +129,5 @@ module.exports.listEmployees = listEmployees;
 module.exports.addDept = addDept;
 module.exports.closeConnection = closeConnection;
 module.exports.updateRole = updateRole;
+module.exports.addRole = addRole;
+module.exports.addEmployee = addEmployee;

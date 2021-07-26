@@ -120,9 +120,9 @@ const selectEmployeeToUpdate = () => {
             .then(ans => {
                 query.updateRole(ans.selectedEmployee, ans.newRole)
                 .then(res => console.log(res))
+                .then(() => chooseAction());
             })
          })
-         .then(() => chooseAction());
 
 }
 
