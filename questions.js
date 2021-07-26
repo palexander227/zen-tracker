@@ -62,5 +62,62 @@ const q2 ={
     type: 'input'
 }
 
+const q3 = [
+    {
+        name: 'roleName',
+        message: 'What is the name of the new role?',
+        type: 'input'
+    },
+
+    {
+        name: 'roleSalary',
+        message: 'What is the salary of the new role?',
+        type: 'input'
+    },
+
+    {
+        name: 'roleDepartment',
+        message: 'What is the department of the new role?',
+        type: 'input'
+    }
+]
+
+const q4 = [
+    {
+        name: 'firstName',
+        message: 'What is the first name of the new employee?',
+        type: 'input'
+    },
+
+    {
+        name: 'lastName',
+        message: 'What is the last name of the new employee?',
+        type: 'input'
+    },
+
+    {
+        name: 'employeeRole',
+        message: 'What is the role of the new employee?',
+        type: 'input'
+    },
+
+    {
+        name: 'employeeManager',
+        message: 'What is ID of the manager of the employee?',
+        type: 'input'
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
 module.exports.q1 = q1;
 module.exports.q2 = q2;
+module.exports.q3 = q3;
