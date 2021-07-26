@@ -108,7 +108,51 @@ const q4 = [
     }
 ]
 
+const q5 = [
+    {
+        name: 'newRoleTitle',
+        message: 'What is the title of the new role?',
+        type: 'input'
+    },
 
+    {
+        name: 'newRoleSalary',
+        message: 'What is the salary of the new role?',
+        type: 'input'
+    },
+
+    {
+        name: 'newRoleDepartment',
+        message: 'What is the department ID for the new role?',
+        type: 'input'
+    }
+]
+
+const q6 = [
+    {
+        name: 'newEmployeeFirstName',
+        message: 'What is the first name of the new employee?',
+        type: 'input'
+    },
+
+    {
+        name: 'newEmployeeLastName',
+        message: 'What is the last name of the new employee?',
+        type: 'input'
+    },
+
+    {
+        name: 'newEmployeeRole',
+        message: 'What is the role ID for the new employee?',
+        type: 'input'
+    },
+
+    {
+        name: 'newEmployeeManager',
+        message: 'What is the manager ID for the new employee?',
+        type: 'input'
+    }
+]
 
 
 

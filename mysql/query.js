@@ -63,45 +63,18 @@ const addDept = (val) => {
     })
 }
 
-const addEmployee = () => {
-    return new Promise((resolve, reject) => {
-        con.query(
-            'SELECT * FROM employee',
-            (err, results) => {
-                if(err){
-                    reject(err)
-                }
-                resolve(results)
-            }
-        )
-        ;
-    })
-}
 
-const addRole = () => {
-    return new Promise((resolve, reject) => {
-        con.query(
-            'SELECT * FROM employee',
-            (err, results) => {
-                if(err){
-                    reject(err)
-                }
-                resolve(results)
-            }
-        )
-        ;
-    })
-}
 
-const updateRole = () => {
+const updateRole = (empName, empRole) => {
     return new Promise((resolve, reject) => {
-        con.query(
-            'SELECT * FROM employee',
+        con.execute(
+            'UPDATE employee SET role_id = ? WHERE first_name = ? AND last_name = ?', 
+                [empRole, empName.split(' ')[0], empName.split(' ')[1]],
             (err, results) => {
                 if(err){
                     reject(err)
                 }
-                resolve(results)
+                resolve(`Updated ${empName} with role ${empRole}.`)
             }
         )
         ;
@@ -123,3 +96,4 @@ module.exports.listRoles = listRoles;
 module.exports.listEmployees = listEmployees;
 module.exports.addDept = addDept;
 module.exports.closeConnection = closeConnection;
+module.exports.updateRole = updateRole;
