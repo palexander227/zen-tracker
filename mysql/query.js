@@ -30,11 +30,17 @@ const listRoles = () => {
         ;
     })
 }
-
+// got confused in testing, alias to e as manager, m as employee
 const listEmployees = () => {
     return new Promise((resolve, reject) => {
         con.query(
-            'SELECT * FROM employee',
+            `SELECT m.id, m.first_name, m.last_name, role.title, department.name AS department, role.salary,
+            CONCAT(e.first_name, " ", e.last_name) manager
+            FROM employee AS e
+            LEFT JOIN employee m ON m.manager_id = e.id
+            LEFT JOIN role ON m.role_id = role.id
+            LEFT JOIN department ON role.department_id = department.id
+            WHERE m.id IS NOT NULL`,
             (err, results) => {
                 if(err){
                     reject(err)
