@@ -19,7 +19,9 @@ const listDepartments = () =>{
 const listRoles = () => {
     return new Promise((resolve, reject) => {
         con.query(
-            'SELECT * FROM role',
+            `SELECT role.id, role.title, role.salary, department.name
+            FROM role
+            LEFT JOIN department ON role.department_id = department.id`,
             (err, results) => {
                 if(err){
                     reject(err)
